@@ -37,20 +37,24 @@ namespace QlySinhVienLab4
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.grb_Employee = new System.Windows.Forms.GroupBox();
-            this.dgv_Employee = new System.Windows.Forms.DataGridView();
-            this.grb_button = new System.Windows.Forms.GroupBox();
-            this.btn_Add = new System.Windows.Forms.Button();
-            this.btn_Delete = new System.Windows.Forms.Button();
-            this.btn_update = new System.Windows.Forms.Button();
-            this.btn_Save = new System.Windows.Forms.Button();
-            this.btn_cancel = new System.Windows.Forms.Button();
-            this.btn_exit = new System.Windows.Forms.Button();
-            this.txt_EmployeeID = new System.Windows.Forms.TextBox();
-            this.txt_Email = new System.Windows.Forms.TextBox();
-            this.txt_username = new System.Windows.Forms.TextBox();
-            this.txt_fullname = new System.Windows.Forms.TextBox();
-            this.txt_salary = new System.Windows.Forms.TextBox();
             this.txt_password = new System.Windows.Forms.TextBox();
+            this.txt_salary = new System.Windows.Forms.TextBox();
+            this.txt_fullname = new System.Windows.Forms.TextBox();
+            this.txt_username = new System.Windows.Forms.TextBox();
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.txt_EmployeeID = new System.Windows.Forms.TextBox();
+            this.dgv_Employee = new System.Windows.Forms.DataGridView();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grb_button = new System.Windows.Forms.GroupBox();
+            this.btn_exit = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
+            this.btn_Add = new System.Windows.Forms.Button();
             this.grb_Employee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Employee)).BeginInit();
             this.grb_button.SuspendLayout();
@@ -140,14 +144,91 @@ namespace QlySinhVienLab4
             this.grb_Employee.TabStop = false;
             this.grb_Employee.Text = "Thông tin nhân viên";
             // 
+            // txt_password
+            // 
+            this.txt_password.Location = new System.Drawing.Point(382, 85);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Size = new System.Drawing.Size(226, 23);
+            this.txt_password.TabIndex = 12;
+            // 
+            // txt_salary
+            // 
+            this.txt_salary.Location = new System.Drawing.Point(382, 56);
+            this.txt_salary.Name = "txt_salary";
+            this.txt_salary.Size = new System.Drawing.Size(226, 23);
+            this.txt_salary.TabIndex = 11;
+            // 
+            // txt_fullname
+            // 
+            this.txt_fullname.Location = new System.Drawing.Point(381, 22);
+            this.txt_fullname.Name = "txt_fullname";
+            this.txt_fullname.Size = new System.Drawing.Size(227, 23);
+            this.txt_fullname.TabIndex = 10;
+            // 
+            // txt_username
+            // 
+            this.txt_username.Location = new System.Drawing.Point(64, 85);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(194, 23);
+            this.txt_username.TabIndex = 9;
+            // 
+            // txt_Email
+            // 
+            this.txt_Email.Location = new System.Drawing.Point(64, 50);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(194, 23);
+            this.txt_Email.TabIndex = 8;
+            // 
+            // txt_EmployeeID
+            // 
+            this.txt_EmployeeID.Location = new System.Drawing.Point(64, 18);
+            this.txt_EmployeeID.Name = "txt_EmployeeID";
+            this.txt_EmployeeID.Size = new System.Drawing.Size(194, 23);
+            this.txt_EmployeeID.TabIndex = 7;
+            // 
             // dgv_Employee
             // 
             this.dgv_Employee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Employee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNV,
+            this.HoTen,
+            this.Email,
+            this.Luong});
             this.dgv_Employee.Location = new System.Drawing.Point(22, 204);
             this.dgv_Employee.Name = "dgv_Employee";
             this.dgv_Employee.RowTemplate.Height = 25;
             this.dgv_Employee.Size = new System.Drawing.Size(731, 150);
             this.dgv_Employee.TabIndex = 8;
+            this.dgv_Employee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Employee_CellClick);
+            this.dgv_Employee.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_Employee_CellFormatting);
+            // 
+            // MaNV
+            // 
+            this.MaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaNV.DataPropertyName = "MANV";
+            this.MaNV.HeaderText = "Mã NV";
+            this.MaNV.Name = "MaNV";
+            // 
+            // HoTen
+            // 
+            this.HoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.HoTen.DataPropertyName = "HOTEN";
+            this.HoTen.HeaderText = "Họ Tên";
+            this.HoTen.Name = "HoTen";
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Email.DataPropertyName = "EMAIL";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // Luong
+            // 
+            this.Luong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Luong.DataPropertyName = "LUONG";
+            this.Luong.HeaderText = "Lương";
+            this.Luong.Name = "Luong";
             // 
             // grb_button
             // 
@@ -163,51 +244,6 @@ namespace QlySinhVienLab4
             this.grb_button.TabIndex = 9;
             this.grb_button.TabStop = false;
             // 
-            // btn_Add
-            // 
-            this.btn_Add.Location = new System.Drawing.Point(6, 22);
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(75, 23);
-            this.btn_Add.TabIndex = 0;
-            this.btn_Add.Text = "Thêm";
-            this.btn_Add.UseVisualStyleBackColor = true;
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Location = new System.Drawing.Point(107, 22);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(75, 23);
-            this.btn_Delete.TabIndex = 1;
-            this.btn_Delete.Text = "Xóa";
-            this.btn_Delete.UseVisualStyleBackColor = true;
-            // 
-            // btn_update
-            // 
-            this.btn_update.Location = new System.Drawing.Point(210, 22);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(75, 23);
-            this.btn_update.TabIndex = 2;
-            this.btn_update.Text = "Sửa";
-            this.btn_update.UseVisualStyleBackColor = true;
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.Location = new System.Drawing.Point(333, 23);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(75, 23);
-            this.btn_Save.TabIndex = 3;
-            this.btn_Save.Text = "Lưu";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            // 
-            // btn_cancel
-            // 
-            this.btn_cancel.Location = new System.Drawing.Point(445, 22);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancel.TabIndex = 4;
-            this.btn_cancel.Text = "Hủy";
-            this.btn_cancel.UseVisualStyleBackColor = true;
-            // 
             // btn_exit
             // 
             this.btn_exit.Location = new System.Drawing.Point(558, 22);
@@ -217,47 +253,55 @@ namespace QlySinhVienLab4
             this.btn_exit.Text = "Thoát";
             this.btn_exit.UseVisualStyleBackColor = true;
             // 
-            // txt_EmployeeID
+            // btn_cancel
             // 
-            this.txt_EmployeeID.Location = new System.Drawing.Point(64, 18);
-            this.txt_EmployeeID.Name = "txt_EmployeeID";
-            this.txt_EmployeeID.Size = new System.Drawing.Size(194, 23);
-            this.txt_EmployeeID.TabIndex = 7;
+            this.btn_cancel.Location = new System.Drawing.Point(445, 22);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancel.TabIndex = 4;
+            this.btn_cancel.Text = "Hủy";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
-            // txt_Email
+            // btn_Save
             // 
-            this.txt_Email.Location = new System.Drawing.Point(64, 50);
-            this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(194, 23);
-            this.txt_Email.TabIndex = 8;
+            this.btn_Save.Location = new System.Drawing.Point(333, 23);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(75, 23);
+            this.btn_Save.TabIndex = 3;
+            this.btn_Save.Text = "Lưu";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
-            // txt_username
+            // btn_update
             // 
-            this.txt_username.Location = new System.Drawing.Point(64, 85);
-            this.txt_username.Name = "txt_username";
-            this.txt_username.Size = new System.Drawing.Size(194, 23);
-            this.txt_username.TabIndex = 9;
+            this.btn_update.Location = new System.Drawing.Point(210, 22);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(75, 23);
+            this.btn_update.TabIndex = 2;
+            this.btn_update.Text = "Sửa";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click_1);
             // 
-            // txt_fullname
+            // btn_Delete
             // 
-            this.txt_fullname.Location = new System.Drawing.Point(381, 22);
-            this.txt_fullname.Name = "txt_fullname";
-            this.txt_fullname.Size = new System.Drawing.Size(227, 23);
-            this.txt_fullname.TabIndex = 10;
+            this.btn_Delete.Location = new System.Drawing.Point(107, 22);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(75, 23);
+            this.btn_Delete.TabIndex = 1;
+            this.btn_Delete.Text = "Xóa";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click_1);
             // 
-            // txt_salary
+            // btn_Add
             // 
-            this.txt_salary.Location = new System.Drawing.Point(382, 56);
-            this.txt_salary.Name = "txt_salary";
-            this.txt_salary.Size = new System.Drawing.Size(226, 23);
-            this.txt_salary.TabIndex = 11;
-            // 
-            // txt_password
-            // 
-            this.txt_password.Location = new System.Drawing.Point(382, 85);
-            this.txt_password.Name = "txt_password";
-            this.txt_password.Size = new System.Drawing.Size(226, 23);
-            this.txt_password.TabIndex = 12;
+            this.btn_Add.Location = new System.Drawing.Point(6, 22);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(75, 23);
+            this.btn_Add.TabIndex = 0;
+            this.btn_Add.Text = "Thêm";
+            this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // frmEmployeeManagement
             // 
@@ -270,6 +314,7 @@ namespace QlySinhVienLab4
             this.Controls.Add(this.label1);
             this.Name = "frmEmployeeManagement";
             this.Text = "Quản lý nhân viên";
+            this.Load += new System.EventHandler(this.frmEmployeeManagement_Load);
             this.grb_Employee.ResumeLayout(false);
             this.grb_Employee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Employee)).EndInit();
@@ -303,5 +348,9 @@ namespace QlySinhVienLab4
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Luong;
     }
 }

@@ -37,6 +37,10 @@ namespace QlySinhVienLab4
                 if (readerSV.Read()) 
                 {
                     MessageBox.Show("đăng nhập hệ thống thành công", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Form frm = new frmEmployeeManagement();
+                    this.Hide();
+                    frm.Show();
+                    
                 }
                 else
                 {
